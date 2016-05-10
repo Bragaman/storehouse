@@ -23,6 +23,15 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# javascript
+gem 'therubyracer', :platforms => :ruby
+
+# languages support
+gem 'rails-i18n'
+
+# haml support
+gem 'haml-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
