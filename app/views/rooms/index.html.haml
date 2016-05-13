@@ -1,0 +1,31 @@
+%h1 Listing rooms
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Volume
+      %th Temperature min
+      %th Temperature max
+      %th Wet min
+      %th Wet max
+      %th
+      %th
+      %th
+
+  %tbody
+    - @rooms.each do |room|
+      %tr
+        %td= room.name
+        %td= room.volume
+        %td= room.temperature_min
+        %td= room.temperature_max
+        %td= room.wet_min
+        %td= room.wet_max
+        %td= link_to 'Show', room
+        %td= link_to 'Edit', edit_room_path(room)
+        %td= link_to 'Destroy', room, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Room', new_room_path

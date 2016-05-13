@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  volume: 1.5
+  temperature_min: 1.5
+  temperature_max: 1.5
+  wet_min: 1.5
+  wet_max: 1.5
+
+two:
+  name: MyString
+  volume: 1.5
+  temperature_min: 1.5
+  temperature_max: 1.5
+  wet_min: 1.5
+  wet_max: 1.5

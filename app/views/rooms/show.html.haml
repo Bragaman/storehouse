@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @room.name
+%p
+  %b Volume:
+  = @room.volume
+%p
+  %b Temperature min:
+  = @room.temperature_min
+%p
+  %b Temperature max:
+  = @room.temperature_max
+%p
+  %b Wet min:
+  = @room.wet_min
+%p
+  %b Wet max:
+  = @room.wet_max
+
+= link_to 'Edit', edit_room_path(@room)
+\|
+= link_to 'Back', rooms_path
