@@ -11,9 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160514122802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "clients", force: :cascade do |t|
+    t.string   "entity_name",  null: false
+    t.text     "bank_details", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string   "name",            null: false
+    t.float    "volume",          null: false
+    t.float    "temperature_min", null: false
+    t.float    "temperature_max", null: false
+    t.float    "wet_min",         null: false
+    t.float    "wet_max",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "stacks", force: :cascade do |t|
+    t.integer  "number",         null: false
+    t.integer  "room_id"
+    t.integer  "place_count",    null: false
+    t.float    "place_height",   null: false
+    t.float    "place_width",    null: false
+    t.float    "place_length",   null: false
+    t.float    "max_total_load", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "stacks", ["room_id"], name: "index_stacks_on_room_id", using: :btree
+
+  add_foreign_key "stacks", "rooms"
 end
