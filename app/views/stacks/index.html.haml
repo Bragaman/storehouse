@@ -1,0 +1,33 @@
+%h1 Listing stacks
+
+%table
+  %thead
+    %tr
+      %th Number
+      %th Room
+      %th Place count
+      %th Place height
+      %th Place width
+      %th Place length
+      %th Max total load
+      %th
+      %th
+      %th
+
+  %tbody
+    - @stacks.each do |stack|
+      %tr
+        %td= stack.number
+        %td= stack.room
+        %td= stack.place_count
+        %td= stack.place_height
+        %td= stack.place_width
+        %td= stack.place_length
+        %td= stack.max_total_load
+        %td= link_to 'Show', stack
+        %td= link_to 'Edit', edit_stack_path(stack)
+        %td= link_to 'Destroy', stack, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Stack', new_stack_path

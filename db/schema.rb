@@ -11,27 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513141933) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "clients", force: :cascade do |t|
-    t.string   "entity_name"
-    t.text     "bank_details"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "rooms", force: :cascade do |t|
-    t.string   "name"
-    t.float    "volume"
-    t.float    "temperature_min"
-    t.float    "temperature_max"
-    t.float    "wet_min"
-    t.float    "wet_max"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
 
 end
