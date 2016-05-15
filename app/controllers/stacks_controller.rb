@@ -19,6 +19,7 @@ class StacksController < ApplicationController
 
   # GET /stacks/1/edit
   def edit
+    @rooms = Room.all
   end
 
   # POST /stacks

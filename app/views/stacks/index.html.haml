@@ -4,7 +4,7 @@
   %thead
     %tr
       %th Number
-      %th Room
+      %th Room.name
       %th Place count
       %th Place height
       %th Place width
@@ -18,7 +18,7 @@
     - @stacks.each do |stack|
       %tr
         %td= stack.number
-        %td= stack.room
+        %td= stack.room.name
         %td= stack.place_count
         %td= stack.place_height
         %td= stack.place_width

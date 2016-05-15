@@ -10,8 +10,8 @@
     = f.label :number
     = f.number_field :number
   .field
-    = f.label :room
-    = f.text_field :room
+    = f.label :room_id
+    = f.select :room_id, (Room.all.map { |e| [e.name, e.id] })
   .field
     = f.label :place_count
     = f.number_field :place_count
