@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.float :height
       t.float :length
       t.float :weight
-      t.integer :agreement_number
+      t.integer :agreement_number,  unique: true
       t.float :temperature_min
       t.float :temperature_max
       t.float :humidity_min

@@ -14,8 +14,8 @@
       %th Humidity max
       %th Receipt date
       %th Expiration date
-      %th Client
-      %th Stack
+      %th Client.entity_name
+      %th Stack.number
       %th Position
       %th
       %th
@@ -35,8 +35,8 @@
         %td= product.humidity_max
         %td= product.receipt_date
         %td= product.expiration_date
-        %td= product.client
-        %td= product.stack
+        %td= product.client.entity_name
+        %td= product.stack.number
         %td= product.position
         %td= link_to 'Show', product
         %td= link_to 'Edit', edit_product_path(product)

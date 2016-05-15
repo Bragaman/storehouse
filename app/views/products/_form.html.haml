@@ -40,11 +40,12 @@
     = f.label :expiration_date
     = f.datetime_select :expiration_date
   .field
-    = f.label :client
-    = f.text_field :client
+    = f.label :client_id
+    = f.select :client_id, Client.all.map{ |e| [e.entity_name, e.id]}
   .field
-    = f.label :stack
-    = f.text_field :stack
+    = f.label :stack_id
+    / = f.text_field :stack
+    = f.select :stack_id, (Stack.all.map { |e| [e.number, e.id] })
   .field
     = f.label :position
     = f.number_field :position
