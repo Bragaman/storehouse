@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Width:
+  = @product.width
+%p
+  %b Height:
+  = @product.height
+%p
+  %b Length:
+  = @product.length
+%p
+  %b Weight:
+  = @product.weight
+%p
+  %b Agreement number:
+  = @product.agreement_number
+%p
+  %b Temperature min:
+  = @product.temperature_min
+%p
+  %b Temperature max:
+  = @product.temperature_max
+%p
+  %b Humidity min:
+  = @product.humidity_min
+%p
+  %b Humidity max:
+  = @product.humidity_max
+%p
+  %b Agreement:
+  = @product.agreement
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path

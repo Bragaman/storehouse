@@ -1,0 +1,39 @@
+%h1 Listing products
+
+%table
+  %thead
+    %tr
+      %th Width
+      %th Height
+      %th Length
+      %th Weight
+      %th Agreement number
+      %th Temperature min
+      %th Temperature max
+      %th Humidity min
+      %th Humidity max
+      %th Agreement
+      %th
+      %th
+      %th
+
+  %tbody
+    - @products.each do |product|
+      %tr
+        %td= product.width
+        %td= product.height
+        %td= product.length
+        %td= product.weight
+        %td= product.agreement_number
+        %td= product.temperature_min
+        %td= product.temperature_max
+        %td= product.humidity_min
+        %td= product.humidity_max
+        %td= product.agreement
+        %td= link_to 'Show', product
+        %td= link_to 'Edit', edit_product_path(product)
+        %td= link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Product', new_product_path

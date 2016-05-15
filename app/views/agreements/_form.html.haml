@@ -1,0 +1,25 @@
+= form_for @agreement do |f|
+  - if @agreement.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@agreement.errors.count, "error")} prohibited this agreement from being saved:"
+      %ul
+        - @agreement.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :receipt_date
+    = f.datetime_select :receipt_date
+  .field
+    = f.label :expiration_date
+    = f.datetime_select :expiration_date
+  .field
+    = f.label :client
+    = f.text_field :client
+  .field
+    = f.label :stack
+    = f.text_field :stack
+  .field
+    = f.label :position
+    = f.number_field :position
+  .actions
+    = f.submit 'Save'

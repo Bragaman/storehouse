@@ -1,0 +1,40 @@
+= form_for @product do |f|
+  - if @product.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
+      %ul
+        - @product.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :width
+    = f.text_field :width
+  .field
+    = f.label :height
+    = f.text_field :height
+  .field
+    = f.label :length
+    = f.text_field :length
+  .field
+    = f.label :weight
+    = f.text_field :weight
+  .field
+    = f.label :agreement_number
+    = f.number_field :agreement_number
+  .field
+    = f.label :temperature_min
+    = f.text_field :temperature_min
+  .field
+    = f.label :temperature_max
+    = f.text_field :temperature_max
+  .field
+    = f.label :humidity_min
+    = f.text_field :humidity_min
+  .field
+    = f.label :humidity_max
+    = f.text_field :humidity_max
+  .field
+    = f.label :agreement
+    = f.text_field :agreement
+  .actions
+    = f.submit 'Save'

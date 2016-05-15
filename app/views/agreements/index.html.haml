@@ -1,0 +1,29 @@
+%h1 Listing agreements
+
+%table
+  %thead
+    %tr
+      %th Receipt date
+      %th Expiration date
+      %th Client
+      %th Stack
+      %th Position
+      %th
+      %th
+      %th
+
+  %tbody
+    - @agreements.each do |agreement|
+      %tr
+        %td= agreement.receipt_date
+        %td= agreement.expiration_date
+        %td= agreement.client
+        %td= agreement.stack
+        %td= agreement.position
+        %td= link_to 'Show', agreement
+        %td= link_to 'Edit', edit_agreement_path(agreement)
+        %td= link_to 'Destroy', agreement, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Agreement', new_agreement_path

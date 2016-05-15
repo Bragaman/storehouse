@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  width: 1.5
+  height: 1.5
+  length: 1.5
+  weight: 1.5
+  agreement_number: 1
+  temperature_min: 1.5
+  temperature_max: 1.5
+  humidity_min: 1.5
+  humidity_max: 1.5
+  agreement_id: 
+
+two:
+  width: 1.5
+  height: 1.5
+  length: 1.5
+  weight: 1.5
+  agreement_number: 1
+  temperature_min: 1.5
+  temperature_max: 1.5
+  humidity_min: 1.5
+  humidity_max: 1.5
+  agreement_id: 

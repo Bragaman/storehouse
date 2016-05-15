@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514122802) do
+ActiveRecord::Schema.define(version: 20160515113222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "agreements", force: :cascade do |t|
+    t.datetime "receipt_date"
+    t.datetime "expiration_date"
+    t.integer  "client_id"
+    t.integer  "stack_id"
+    t.integer  "position"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "agreements", ["client_id"], name: "index_agreements_on_client_id", using: :btree
+  add_index "agreements", ["stack_id"], name: "index_agreements_on_stack_id", using: :btree
 
   create_table "clients", force: :cascade do |t|
     t.string   "entity_name",  null: false
@@ -22,6 +35,23 @@ ActiveRecord::Schema.define(version: 20160514122802) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "products", force: :cascade do |t|
+    t.float    "width"
+    t.float    "height"
+    t.float    "length"
+    t.float    "weight"
+    t.integer  "agreement_number"
+    t.float    "temperature_min"
+    t.float    "temperature_max"
+    t.float    "humidity_min"
+    t.float    "humidity_max"
+    t.integer  "agreement_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "products", ["agreement_id"], name: "index_products_on_agreement_id", using: :btree
 
   create_table "rooms", force: :cascade do |t|
     t.string   "name",            null: false
@@ -48,5 +78,8 @@ ActiveRecord::Schema.define(version: 20160514122802) do
 
   add_index "stacks", ["room_id"], name: "index_stacks_on_room_id", using: :btree
 
+  add_foreign_key "agreements", "clients"
+  add_foreign_key "agreements", "stacks"
+  add_foreign_key "products", "agreements"
   add_foreign_key "stacks", "rooms"
 end
