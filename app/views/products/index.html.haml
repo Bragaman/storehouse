@@ -12,7 +12,11 @@
       %th Temperature max
       %th Humidity min
       %th Humidity max
-      %th Agreement
+      %th Receipt date
+      %th Expiration date
+      %th Client
+      %th Stack
+      %th Position
       %th
       %th
       %th
@@ -29,7 +33,11 @@
         %td= product.temperature_max
         %td= product.humidity_min
         %td= product.humidity_max
-        %td= product.agreement
+        %td= product.receipt_date
+        %td= product.expiration_date
+        %td= product.client
+        %td= product.stack
+        %td= product.position
         %td= link_to 'Show', product
         %td= link_to 'Edit', edit_product_path(product)
         %td= link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }

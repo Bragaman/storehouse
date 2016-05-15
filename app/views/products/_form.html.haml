@@ -34,7 +34,19 @@
     = f.label :humidity_max
     = f.text_field :humidity_max
   .field
-    = f.label :agreement
-    = f.text_field :agreement
+    = f.label :receipt_date
+    = f.datetime_select :receipt_date
+  .field
+    = f.label :expiration_date
+    = f.datetime_select :expiration_date
+  .field
+    = f.label :client
+    = f.text_field :client
+  .field
+    = f.label :stack
+    = f.text_field :stack
+  .field
+    = f.label :position
+    = f.number_field :position
   .actions
     = f.submit 'Save'

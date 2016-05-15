@@ -10,7 +10,11 @@ class CreateProducts < ActiveRecord::Migration
       t.float :temperature_max
       t.float :humidity_min
       t.float :humidity_max
-      t.references :agreement, index: true, foreign_key: true
+      t.datetime :receipt_date
+      t.datetime :expiration_date
+      t.references :client, index: true, foreign_key: true
+      t.references :stack, index: true, foreign_key: true
+      t.integer :position
 
       t.timestamps null: false
     end

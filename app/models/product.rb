@@ -1,3 +1,4 @@
 class Product < ActiveRecord::Base
-  belongs_to :agreement
+  belongs_to :client
+  belongs_to :stack
 end

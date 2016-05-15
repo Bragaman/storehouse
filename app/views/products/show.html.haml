@@ -28,8 +28,20 @@
   %b Humidity max:
   = @product.humidity_max
 %p
-  %b Agreement:
-  = @product.agreement
+  %b Receipt date:
+  = @product.receipt_date
+%p
+  %b Expiration date:
+  = @product.expiration_date
+%p
+  %b Client:
+  = @product.client
+%p
+  %b Stack:
+  = @product.stack
+%p
+  %b Position:
+  = @product.position
 
 = link_to 'Edit', edit_product_path(@product)
 \|

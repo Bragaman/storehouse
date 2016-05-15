@@ -10,7 +10,11 @@ one:
   temperature_max: 1.5
   humidity_min: 1.5
   humidity_max: 1.5
-  agreement_id: 
+  receipt_date: 2016-05-15 15:00:09
+  expiration_date: 2016-05-15 15:00:09
+  client_id: 
+  stack_id: 
+  position: 1
 
 two:
   width: 1.5
@@ -22,4 +26,8 @@ two:
   temperature_max: 1.5
   humidity_min: 1.5
   humidity_max: 1.5
-  agreement_id: 
+  receipt_date: 2016-05-15 15:00:09
+  expiration_date: 2016-05-15 15:00:09
+  client_id: 
+  stack_id: 
+  position: 1
