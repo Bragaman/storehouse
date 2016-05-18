@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
   belongs_to :client
   belongs_to :stack
 
+  validates :width, :height, :length, :weight, presence: true, numericality: {only_float: true, greater_than: 0}
   validate :validator
 
   def validator()
@@ -19,12 +20,13 @@ class Product < ActiveRecord::Base
   		have_item_on_place = false
   		have_number_agreement =false
   		@stack.products.all.each do |i| 
-  			total_load += i.weight
-  			have_item_on_place = true if i.position == position
-  			have_number_agreement = true if i.agreement_number == agreement_number
+  			total_load += i.weight if i.id != id
+  			have_item_on_place = true if i.position == position && i.id != id
+  			have_number_agreement = true if i.agreement_number == agreement_number && i.id != id
    		end
 
-  		if (total_load +  weight) >= @stack.max_total_load
+   		
+  		if (total_load + weight) >= @stack.max_total_load
   			errors["Common errors"] << "total load is #{total_load}; max total load = #{@stack.max_total_load}"	
   		end
 
